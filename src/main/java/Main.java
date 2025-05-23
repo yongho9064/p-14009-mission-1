@@ -1,6 +1,7 @@
 package main.java;
 
 import main.java.dto.WiseSaying;
+import main.java.service.AddFileService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +11,7 @@ import java.util.Map;
 
 public class Main {
 
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    final static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
 
@@ -27,8 +28,7 @@ public class Main {
             if (command.equals("등록")) {
                 add(map, count); count++;
             } else if (command.equals("종료")) {
-                br.close();
-                break;
+                br.close(); break;
             } else if (command.equals("목록")) {
                 list(map);
             } else if (command.startsWith("삭제?id=")) {
